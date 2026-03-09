@@ -123,18 +123,16 @@ export const addDefaultAdmin = async()=>{
         )
         //Si no existe que la cree
         if(!adminExists){
-            let passwordAdmin = process.env.DEFAULTPASSWORD_ADMIN
-            let usernameAdmin = process.env.DEFAULTADMINUSER
             let adminUser = new User(
                 {
-                    name: 'DefaultAdmin',
-                    surname: 'Admin',
-                    username: usernameAdmin,
-                    email: 'admin@gmail.com',
-                    password: passwordAdmin,
-                    phone: '54411221',
-                    NIT: '4541241542132',
-                    role: 'ADMIN'
+                    name: process.env.DEFAULT_NAME,
+                    surname: process.env.DEFAULT_SURNAME,
+                    username: process.env.DEFAULT_USERNAME,
+                    email: process.env.DEFAULT_EMAIL,
+                    password: process.env.DEFAULT_PASSWORD_ADMIN,
+                    phone: process.env.DEFAULT_PHONE,
+                    NIT: process.env.DEFAULT_NIT,
+                    role: process.env.DEFAULT_ADMIN
                 }
             )
             //La guardamos encriptada
